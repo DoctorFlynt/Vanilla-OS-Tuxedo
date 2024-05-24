@@ -16,3 +16,5 @@ for file in /deb-pkgs/*; do
     apt-get install -y $file
     
 done
+
+apt-get install -y ./tuxedo-control-center_2.1.8_amd64
