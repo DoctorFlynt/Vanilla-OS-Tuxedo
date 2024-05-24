@@ -1,5 +1,5 @@
 name: DoctorFlynt/Vanilla-OS-Tuxedo # Replace this name with your image name
-id: 1 # Replace this ID with your image ID
+id: 2 # Replace this ID with your image ID
 stages:
 - id: build
   base: ghcr.io/vanilla-os/nvidia:main # Optionally, Replace this image URL with a different one i.e. nvidia:main, etc
