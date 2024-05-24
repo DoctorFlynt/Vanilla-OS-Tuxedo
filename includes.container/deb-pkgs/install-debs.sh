@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#set -e
+set -e
 #for file in /deb-pkgs/*; do
 #    if [ ! -f "$file" ]; then
 #        continue
@@ -13,9 +13,9 @@
 #
 #    echo "installing $file"
 #
-    apt install -y tuxedo-keyboard_3.2.10_all.deb
+    apt-get install -y tuxedo-keyboard_3.2.10_all.deb
     echo "installing tuxedo-keyboard-drivers"
-    apt install -y tuxedo-control-center_2.1.8_amd64.deb
+   # apt install -y tuxedo-control-center_2.1.8_amd64.deb
     echo "installing tuxedo-control-center"
     
 done
