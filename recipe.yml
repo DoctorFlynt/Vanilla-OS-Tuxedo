@@ -1,4 +1,4 @@
-name: Vanilla-OS-Tuxedo # Replace this name with your image name
+name: DoctorFlynt/Vanilla-OS-Tuxedo # Replace this name with your image name
 id: 1 # Replace this ID with your image ID
 stages:
 - id: build
