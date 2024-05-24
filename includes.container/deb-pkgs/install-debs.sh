@@ -5,7 +5,7 @@ for file in /deb-pkgs/*; do
         continue
     fi
 
-    extension=${file##tuxedo-keyboard*.}
+    extension=${file##*.}
     if [ $extension != "deb" ]; then
         continue
     fi
@@ -13,14 +13,4 @@ for file in /deb-pkgs/*; do
     echo "installing $file"
 
     apt-get install -y $file
-
-      extension=${file##tuxedo-control-center*.}
-    if [ $extension != "deb" ]; then
-        continue
-    fi
-
-    echo "installing $file"
-
-    apt-get install -y $file
-
 done
