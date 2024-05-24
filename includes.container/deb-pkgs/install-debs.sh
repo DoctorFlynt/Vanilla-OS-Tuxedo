@@ -10,7 +10,9 @@ for file in /deb-pkgs/*; do
     if [ $extension != "deb" ]; then
         continue
     fi
-    
+      if [ "$file" != *"control-center"* ];then
+        continue
+    fi
    echo "installing $file"
 
     apt-get install -y $file
