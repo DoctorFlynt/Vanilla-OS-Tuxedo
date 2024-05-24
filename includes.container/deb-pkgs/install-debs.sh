@@ -13,9 +13,9 @@ for file in /deb-pkgs/*; do
 #
 #    echo "installing $file"
 #
-    apt-get install -y tuxedo-keyboar*.deb
+    apt-get install -y tuxedo-keyboard*.deb
     echo "installing tuxedo-keyboard-drivers"
-    apt-get install -y tuxedo-control-center*.deb
-    echo "installing tuxedo-control-center"
+  #  apt-get install -y tuxedo-control-center*.deb
+ #   echo "installing tuxedo-control-center"
     
 done
