@@ -10,13 +10,13 @@ for file in /deb-pkgs/*; do
     if [ $extension != "deb" ]; then
         continue
     fi
-    if [ "$file" != *"control-center"* ];then
-        continue
-    fi
+
+   # if [ "$file" != *"control-center"* ];then
+   #     continue
+   # fi
+
    echo "installing $file"
 
     apt-get install -y $file
     
 done
-
-apt-get install -y includes.container/deb-pkgs/tuxedo-control-center_2.1.8_amd64.deb
