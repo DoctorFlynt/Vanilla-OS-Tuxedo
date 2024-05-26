@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt-get install -y /deb-pkgs/tuxedo-keyboard_3.2.10_all.deb
+#apt-get install -y /deb-pkgs/tuxedo-keyboard_3.2.10_all.deb
 
 set -e
 for file in /deb-pkgs/*; do
@@ -13,7 +13,7 @@ for file in /deb-pkgs/*; do
         continue
     fi
 
-    if [ "$file" != *"control-center"* ];then
+    if [ "$file" = *"control-center"* ];then
        continue
     fi
 
