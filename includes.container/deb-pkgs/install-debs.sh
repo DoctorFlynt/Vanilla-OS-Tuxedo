@@ -19,5 +19,5 @@ for file in /deb-pkgs/*; do
 
     apt-get install -y $file
 
-    apt-get install tuxedo-keyboard_3.2.10_all.deb
+    apt-get install tuxedo-control-center_2.1.8_amd64.deb
 done
