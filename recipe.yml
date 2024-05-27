@@ -32,7 +32,7 @@ stages:
     type: shell
     commands:
     - echo Example output
-    - echo '#!/bin/bash' > /usr/sbin/FsGuard #disable FsGuard
+ #   - echo '#!/bin/bash' > /usr/sbin/FsGuard #disable FsGuard
 
   - name: example-modules # Sample module demonstrating importing local and remote modules
     type: includes
@@ -56,19 +56,19 @@ stages:
     - apt-get clean
     - lpkg --lock
 
- # - name: fsguard
- #   type: fsguard
- #   CustomFsGuard: false
- #   FsGuardLocation: "/usr/sbin/FsGuard"
- #   GenerateKey: true
- #   FilelistPaths: ["/usr/bin"]
- #   modules:
- #     - name: remove-prev-fsguard
- #       type: shell
- #       commands:
- #         - rm -rf /FsGuard 
- #         - rm -f ./minisign.pub ./minisign.key 
- #         - chmod +x /usr/sbin/init
+  - name: fsguard
+    type: fsguard
+    CustomFsGuard: false
+    FsGuardLocation: "/usr/sbin/FsGuard"
+    GenerateKey: true
+    FilelistPaths: ["/usr/bin"]
+    modules:
+      - name: remove-prev-fsguard
+        type: shell
+        commands:
+          - rm -rf /FsGuard 
+          - rm -f ./minisign.pub ./minisign.key 
+          - chmod +x /usr/sbin/init
 
   - name: cleanup2
     type: shell
