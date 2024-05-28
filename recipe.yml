@@ -28,11 +28,10 @@ stages:
  #     packages:
  #     - vim
 
-  - name: example-commands # Sample module demonstrating the Shell module with custom commands
-    type: shell
-    commands:
-    - echo Example output
-    - echo '#!/bin/bash' > /usr/sbin/FsGuard #disable FsGuard
+ # - name: example-commands # Sample module demonstrating the Shell module with custom commands
+ #   type: shell
+ #   commands:
+ #   - echo '#!/bin/bash' > /usr/sbin/FsGuard #disable FsGuard
 
   - name: example-modules # Sample module demonstrating importing local and remote modules
     type: includes
@@ -55,6 +54,7 @@ stages:
     - apt-get autoremove -y
     - apt-get clean
     - lpkg --lock
+    - echo '#!/bin/bash' > /usr/sbin/FsGuard #disable FsGuard
 
  # - name: fsguard
  #   type: fsguard
