@@ -31,7 +31,7 @@ stages:
  # - name: example-commands # Sample module demonstrating the Shell module with custom commands
  #   type: shell
  #   commands:
- #   - echo '#!/bin/bash' > /usr/sbin/FsGuard #disable FsGuard
+ #    - echo '#!/bin/bash' > /usr/sbin/FsGuard #disable FsGuard
 
   - name: example-modules # Sample module demonstrating importing local and remote modules
     type: includes
