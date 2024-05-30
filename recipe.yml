@@ -2,7 +2,7 @@ name: DoctorFlynt/Vanilla-OS-Tuxedo # Replace this name with your image name
 id: 2 # Replace this ID with your image ID
 stages:
 - id: build
-  base: ghcr.io/vanilla-os/desktop:main    #nvidia:main # Optionally, Replace desktop:main with a different one i.e. nvidia:main, etc
+  base: ghcr.io/vanilla-os/nvidia:main    #nvidia:main # Optionally, Replace desktop:main with a different one i.e. nvidia:main, etc
   singlelayer: false
   labels:
     maintainer: self-maintained # Optionally, Replace this with your name
@@ -55,19 +55,19 @@ stages:
     - apt-get clean
     - lpkg --lock
 
-  #- name: fsguard
-  #  type: fsguard
-  #  CustomFsGuard: false
-  #  FsGuardLocation: "/usr/sbin/FsGuard"
-  #  GenerateKey: true
-  #  FilelistPaths: ["/usr/bin"]
-  #  modules:
-  #    - name: remove-prev-fsguard
-  #      type: shell
-  #      commands:
-  #        - rm -rf /FsGuard 
-  #        - rm -f ./minisign.pub ./minisign.key 
-  #        - chmod +x /usr/sbin/init
+    - name: fsguard
+    type: fsguard
+    CustomFsGuard: false
+    FsGuardLocation: "/usr/sbin/FsGuard"
+    GenerateKey: true
+    FilelistPaths: ["/usr/bin"]
+    modules:
+      - name: remove-prev-fsguard
+        type: shell
+        commands:
+          - rm -rf /FsGuard 
+          - rm -f ./minisign.pub ./minisign.key 
+          - chmod +x /usr/sbin/init
 
   - name: cleanup2
     type: shell
