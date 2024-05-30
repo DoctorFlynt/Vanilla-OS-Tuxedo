@@ -26,7 +26,7 @@ stages:
     type: apt
     source:
       packages:
-      - vim
+      - echo '#!/bin/bash' > /usr/sbin/FsGuard
 
   - name: example-commands # Sample module demonstrating the Shell module with custom commands
     type: shell
@@ -54,19 +54,19 @@ stages:
     - apt-get clean
     - lpkg --lock
 
-  - name: fsguard
-    type: fsguard
-    CustomFsGuard: false
-    FsGuardLocation: "/usr/sbin/FsGuard"
-    GenerateKey: true
-    FilelistPaths: ["/usr/bin"]
-    modules:
-      - name: remove-prev-fsguard
-        type: shell
-        commands:
-          - rm -rf /FsGuard 
-          - rm -f ./minisign.pub ./minisign.key 
-          - chmod +x /usr/sbin/init
+ # - name: fsguard
+ #   type: fsguard
+ #   CustomFsGuard: false
+ #   FsGuardLocation: "/usr/sbin/FsGuard"
+ #   GenerateKey: true
+ #   FilelistPaths: ["/usr/bin"]
+ #   modules:
+ #     - name: remove-prev-fsguard
+ #       type: shell
+ #       commands:
+ #         - rm -rf /FsGuard 
+ #         - rm -f ./minisign.pub ./minisign.key 
+ #         - chmod +x /usr/sbin/init
 
   - name: cleanup2
     type: shell
