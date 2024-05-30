@@ -1,8 +1,8 @@
 #!/bin/bash
 
 apt-get install -y /deb-pkgs/tuxedo-keyboard_3.2.10_all.deb
-apt-get install -y /deb-pkgs/tuxedo-keyboard-ite_0.4.3_all.deb
 apt-get install -y /deb-pkgs/tuxedo-drivers_4.4.2_all.deb
+apt-get install -y /deb-pkgs/tuxedo-keyboard-ite_0.4.3_all.deb
 
 set -e
 for file in /deb-pkgs/*; do
