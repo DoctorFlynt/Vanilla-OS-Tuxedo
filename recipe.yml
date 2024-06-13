@@ -32,6 +32,7 @@ stages:
     type: shell
     commands:
       - echo '#!/bin/bash' > /usr/sbin/FsGuard
+      - apt remove kgx -y
 
   - name: example-modules # Sample module demonstrating importing local and remote modules
     type: includes
