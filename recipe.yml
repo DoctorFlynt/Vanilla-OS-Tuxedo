@@ -27,6 +27,8 @@ stages:
     source:
       packages:
       - virt-manager
+      - qemu-system
+      - libvirt-daemon-system
       
   - name: example-commands # Sample module demonstrating the Shell module with custom commands
     type: shell
