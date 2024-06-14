@@ -34,8 +34,8 @@ stages:
     type: shell
     commands:
       - echo '#!/bin/bash' > /usr/sbin/FsGuard
-      - apt remove kgx -y
-
+      - apt install virt-manager
+      
   - name: example-modules # Sample module demonstrating importing local and remote modules
     type: includes
     includes:
