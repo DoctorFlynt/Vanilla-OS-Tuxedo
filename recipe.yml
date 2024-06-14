@@ -36,6 +36,8 @@ stages:
     type: shell
     commands:
       - echo '#!/bin/bash' > /usr/sbin/FsGuard
+      - adduser $USER libvirt
+      - adduser $USER kvm
       
   - name: example-modules # Sample module demonstrating importing local and remote modules
     type: includes
