@@ -30,7 +30,10 @@ stages:
       - libvirt-daemon-system
       - libvirt-clients
       - bridge-utils
+      - virtinst
+      - ebtables
       - virt-manager
+      
       
   - name: example-commands # Sample module demonstrating the Shell module with custom commands
     type: shell
