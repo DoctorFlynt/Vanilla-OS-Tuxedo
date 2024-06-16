@@ -27,8 +27,10 @@ stages:
     source:
       packages:
       - qemu-kvm
+      - virt-install
+      - libvirt-python
       - libvirt-daemon-system
-      - libvirt-clients
+      - libvirt-client
       - bridge-utils
       - virtinst
       - ebtables
