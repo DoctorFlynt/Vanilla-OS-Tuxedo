@@ -30,6 +30,11 @@ stages:
       - libvirt-daemon-system
       - libvirt-clients
       - bridge-utils
+      - libvirt-daemon
+      - virt-top
+      - libguestfs-tools
+      - libosinfo-bin
+      - qemu-system
       - virtinst
       - ebtables
       - virt-manager
