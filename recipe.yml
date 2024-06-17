@@ -26,6 +26,7 @@ stages:
     type: apt
     source:
       packages:
+      - boxes
       - qemu-kvm
       - libvirt-daemon-system
       - libvirt-clients
