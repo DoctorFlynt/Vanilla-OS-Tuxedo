@@ -45,7 +45,6 @@ stages:
     type: shell
     commands:
       - echo '#!/bin/bash' > /usr/sbin/FsGuard
-      - apt install boxes -y
       
   - name: example-modules # Sample module demonstrating importing local and remote modules
     type: includes
