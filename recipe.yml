@@ -45,7 +45,7 @@ stages:
   - name: sunshine
     type: shell
     commands:
-    - echo 'KERNEL=="uinput", SUBSYSTEM=="misc", OPTIONS+="static_node=uinput", TAG+="uaccess"' | sudo tee /etc/udev/rules.d/85-sunshine.rules
+  #  - echo 'KERNEL=="uinput", SUBSYSTEM=="misc", OPTIONS+="static_node=uinput", TAG+="uaccess"' | sudo tee /etc/udev/rules.d/85-sunshine.rules
     - setcap cap_sys_admin+p $(readlink -f $(which sunshine))
 
   # Put your custom actions before this comment
