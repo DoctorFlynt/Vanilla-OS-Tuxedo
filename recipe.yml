@@ -26,19 +26,6 @@ stages:
     type: apt
     source:
       packages:
-      - qemu-kvm
-      - libvirt-daemon-system
-      - libvirt-clients
-      - bridge-utils
-      - phyton3-libvirt
-      - libvirt-daemon
-      - virt-top
-      - libguestfs-tools
-      - libosinfo-bin
-      - qemu-system
-      - virtinst
-      - ebtables
-      - virt-manager
       - gnome-boxes
       
       
