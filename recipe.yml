@@ -39,6 +39,7 @@ stages:
       - virtinst
       - ebtables
       - virt-manager
+      - gnome-boxes
       
       
   - name: example-commands # Sample module demonstrating the Shell module with custom commands
