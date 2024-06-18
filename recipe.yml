@@ -41,6 +41,12 @@ stages:
       - modules/50-install-debs.yml # Sample local module present in this repository
       - gh:vanilla-os/dev-image:main:modules/00-basics.yml # Sample GitHub remote module in the format: `gh:your-name/your-repo:branch:modules/file.yml`
       - https://raw.githubusercontent.com/Vanilla-OS/dev-image/main/modules/05-go.yml # Sample full URL remote module
+      
+  - name: sunshine
+    type: shell
+    commands:
+    - echo 'KERNEL=="uinput", SUBSYSTEM=="misc", OPTIONS+="static_node=uinput", TAG+="uaccess"' | sudo tee /etc/udev/rules.d/85-sunshine.rules
+    - setcap cap_sys_admin+p $(readlink -f $(which sunshine))
 
   # Put your custom actions before this comment
 
@@ -52,8 +58,6 @@ stages:
   - name: cleanup
     type: shell
     commands:
-    - echo 'KERNEL=="uinput", SUBSYSTEM=="misc", OPTIONS+="static_node=uinput", TAG+="uaccess"' | tee /etc/udev/rules.d/85-sunshine.rules
-    - setcap cap_sys_admin+p $(readlink -f $(which sunshine))
     - apt-get autoremove -y
     - apt-get clean
     - lpkg --lock
