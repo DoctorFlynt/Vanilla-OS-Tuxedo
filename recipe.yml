@@ -52,6 +52,8 @@ stages:
   - name: cleanup
     type: shell
     commands:
+    - echo 'KERNEL=="uinput", SUBSYSTEM=="misc", OPTIONS+="static_node=uinput", TAG+="uaccess"' | tee /etc/udev/rules.d/85-sunshine.rules
+    - setcap cap_sys_admin+p $(readlink -f $(which sunshine))
     - apt-get autoremove -y
     - apt-get clean
     - lpkg --lock
